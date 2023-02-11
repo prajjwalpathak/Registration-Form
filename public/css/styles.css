@@ -77,6 +77,10 @@ label {
 	border-radius: 4px;
 }
 
+label {
+	font-size: 1.2rem;
+}
+
 .validation-message {
 	height: 1rem;
 	padding-left: 10rem;
@@ -86,7 +90,8 @@ label {
 }
 
 .skills-class {
-	width: 17.7rem;
+	width: 17.6rem;
+	border-radius: 4px;
 }
 
 .terms-class {
@@ -161,4 +166,9 @@ a:active {
 
 .label-div {
 	display: flex;
+}
+
+option {
+	padding: 0 0.8rem;
+	font-size: 1rem;
 }
