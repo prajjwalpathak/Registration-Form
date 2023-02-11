@@ -1,19 +1,25 @@
 {
-  "name": "registration",
+  "name": "registration-form",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PrajjwalPathak/Registration-Form.git"
   },
   "author": "Prajjwal Pathak",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PrajjwalPathak/Registration-Form/issues"
+  },
+  "homepage": "https://github.com/PrajjwalPathak/Registration-Form#readme",
   "dependencies": {
     "cookie-parser": "^1.4.6",
     "ejs": "^3.1.8",
     "express": "^4.18.2"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.20"
   }
 }
