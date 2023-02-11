@@ -5,6 +5,7 @@
 	padding: 0;
 	box-sizing: border-box;
 	font-family: "Poppins", sans-serif;
+	list-style: none;
 }
 
 :root {
@@ -12,7 +13,7 @@
 }
 
 body {
-	background-color: rgb(155, 48, 255);
+	background-color: rgb(218, 177, 255);
 	width: 100vw;
 	height: 100vh;
 	display: flex;
@@ -48,6 +49,11 @@ body {
 	font-size: 1.2rem;
 }
 
+label {
+	width: 14rem;
+	text-align: left;
+}
+
 .label-input-class {
 	width: inherit;
 	display: flex;
@@ -79,8 +85,8 @@ body {
 	font-size: 10px;
 }
 
-.skill-list {
-	height: 5rem;
+.skills-class {
+	width: 17.7rem;
 }
 
 .terms-class {
@@ -90,6 +96,8 @@ body {
 }
 
 .terms-label-class {
+	text-align: center;
+	width: inherit;
 	padding-left: 1rem;
 	font-size: 1rem;
 }
@@ -119,6 +127,38 @@ body {
 	background-color: rgb(0, 128, 255);
 }
 
-.terms-validation-message {
-	padding-left: 6.1rem;
+.nav-bar {
+	background-color: #bec8ff;
+	position: absolute;
+	top: 0;
+	padding: 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100vw;
+}
+
+a:link,
+a:visited {
+	margin: 0 1rem;
+	background-color: #f7bbff;
+	color: rgb(0, 0, 0);
+	padding: 14px 25px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	border-radius: 4px;
+}
+
+a:hover,
+a:active {
+	background-color: #f49eff;
+}
+
+.nav-bar-ul {
+	display: flex;
+}
+
+.label-div {
+	display: flex;
 }

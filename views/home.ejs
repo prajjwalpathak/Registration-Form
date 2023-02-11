@@ -1,20 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Home</title>
 </head>
+
 <body>
-    <h1>User Data</h1>
-    <label>Name</label><p><%= username %></p>
-    <label>Email</label><p><%= email %></p>
-    <label>Phone</label><p><%= phone %></p>
-    <label>Technology</label><p><%= technology %></p>
-    <label>Skills</label><p><%= skills %></p>
-    <label>Terms & Conditions</label><p><%= termsCheck %></p>
-    <a href="/change-password">Change Password</a>
-    <a href="/signout">Logout</a>
+    <div class="nav-bar">
+        <h1>User Data</h1>
+        <div class="links-div">
+            <a href="/change-password">Change Password</a>
+            <a href="/signout">Logout</a>
+        </div>
+    </div>
+    <div class="user-details-div">
+        <div class="label-div">
+            <label>Name</label>
+            <p>
+                <%= username %>
+            </p>
+        </div>
+        <div class="label-div"><label>Email</label>
+            <p>
+                <%= email %>
+            </p>
+        </div>
+        <div class="label-div"><label>Phone</label>
+            <p>
+                <%= phone %>
+            </p>
+        </div>
+        <div class="label-div"><label>Technology</label>
+            <p>
+                <%= technology %>
+            </p>
+        </div>
+        <div class="label-div"><label>Skills</label>
+            <p>
+                <%= skills %>
+            </p>
+        </div>
+        <div class="label-div"><label>Terms & Conditions</label>
+            <p>
+                <%= termsCheck %>
+            </p>
+        </div>
+    </div>
 </body>
+
 </html>
