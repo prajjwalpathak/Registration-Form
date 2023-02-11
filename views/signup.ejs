@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Registration - SignUp</title>
+</head>
+
+<body>
+    <div class="form-div">
+        <form action="/signup" method="post" class="form-class" id="form">
+            <div class="form-control">
+                <div class="label-input-class">
+                    <label>Username</label>
+                    <input name="username" class="name-input input" id="username" type="text">
+                </div>
+                <div class="span-class">
+                    <span class="validation-message" id="username-message"></span>
+                </div>
+            </div>
+            <div class="form-control">
+                <div class="label-input-class">
+                    <label>Email</label>
+                    <input name="email" class="email-input input" id="email" type="text">
+                </div>
+                <div class="span-class">
+                    <span class="validation-message" id="email-message"></span>
+                </div>
+            </div>
+            <div class="form-control">
+                <div class="label-input-class">
+                    <label>Password</label>
+                    <input name="password" class="password-input input" id="password" type="password">
+                </div>
+                <div class="span-class">
+                    <span class="validation-message" id="password-message"></span>
+                </div>
+            </div>
+            <div class="form-control">
+                <div class="label-input-class">
+                    <label>Phone</label>
+                    <input name="phone" class="phone-input input" id="phone" type="text" inputmode="numeric">
+                </div>
+                <div class="span-class">
+                    <span class="validation-message" id="phone-message"></span>
+                </div>
+            </div>
+            <div class="form-control">
+                <div class="label-input-class">
+                    <label>Technology</label>
+                    <select name="technology" class="input" id="technology">
+                        <option value="none" selected disabled hidden>Select</option>
+                        <option value="NodeJS">NodeJS</option>
+                        <option value="ReactJS">ReactJS</option>
+                        <option value="Angular">Angular</option>
+                        <option value="ASP.NET">ASP.NET</option>
+                        <option value="Data Science">Data Science</option>
+                        <option value="Big Data">Big Data</option>
+                    </select>
+                </div>
+                <div class="span-class">
+                    <span class="validation-message" id="technology-message"></span>
+                </div>
+            </div>
+            <div class="form-control">
+                <div class="label-input-class">
+                    <label>Skills</label>
+                    <div class="skills-div">
+                        <select name="skills" class="" id="skills" multiple="multiple">
+                            <option value="none" selected disabled hidden>Select</option>
+                            <option value="NodeJS">NodeJS</option>
+                            <option value="ReactJS">ReactJS</option>
+                            <option value="Angular">Angular</option>
+                            <option value="ASP.NET">ASP.NET</option>
+                            <option value="Data Science">Data Science</option>
+                            <option value="Big Data">Big Data</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="span-class">
+                    <span class="validation-message" id="skills-message"></span>
+                </div>
+            </div>
+            <div class="form-control">
+                <div class="label-input-class terms-class">
+                    <input class="termsCheck-input" type="checkbox" id="termsCheck" name="termsCheck">
+                    <label class="terms-label-class">I agree to all the Terms and Conditions.</label>
+                </div>
+                <div class="span-class">
+                    <span class="validation-message terms-validation-message" id="termsCheck-message"></span>
+                </div>
+            </div>
+            <div class="btn-sub-div">
+                <button class="btn-sub" type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

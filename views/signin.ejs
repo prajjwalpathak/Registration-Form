@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Registration - SignIn</title>
+</head>
+
+<body>
+    <div class="form-div">
+        <form action="/signin" method="post" class="form-class" id="form">
+            <div class="form-control">
+                <div class="label-input-class">
+                    <label>Email</label>
+                    <input class="email-input input" id="email" type="text" name="email">
+                </div>
+                <div class="span-class">
+                    <span class="validation-message" id="email-message"></span>
+                </div>
+            </div>
+            <div class="form-control">
+                <div class="label-input-class">
+                    <label>Password</label>
+                    <input class="password-input input" id="password" type="password" name="password">
+                </div>
+                <div class="span-class">
+                    <span class="validation-message" id="password-message"></span>
+                </div>
+            </div>
+            <div class="btn-sub-div">
+                <button class="btn-sub" type="submit">Login</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

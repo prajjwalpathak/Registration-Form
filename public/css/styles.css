@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+}
+
+:root {
+	--len: 20rem;
+}
+
+body {
+	background-color: rgb(155, 48, 255);
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.form-div {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 3rem 3rem 1rem 3rem;
+	border-radius: 10px;
+	background-color: rgba(255, 255, 255, 0.5);
+	box-shadow: 2px 3px 8px rgb(59, 59, 59);
+}
+
+.form-class {
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	justify-content: center;
+	width: 30rem;
+}
+
+.form-control {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: inherit;
+	height: 4rem;
+	font-size: 1.2rem;
+}
+
+.label-input-class {
+	width: inherit;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.span-class {
+	display: flex;
+	width: inherit;
+	margin-bottom: 1rem;
+	align-items: center;
+}
+
+.input {
+	font-size: 1rem;
+	width: var(--len);
+	height: 2.1rem;
+	padding-left: 0.6rem;
+	border: 1px solid rgb(116, 116, 116);
+	border-radius: 4px;
+}
+
+.validation-message {
+	height: 1rem;
+	padding-left: 10rem;
+	padding-top: 1px;
+	color: rgb(200, 0, 0);
+	font-size: 10px;
+}
+
+.skill-list {
+	height: 5rem;
+}
+
+.terms-class {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.terms-label-class {
+	padding-left: 1rem;
+	font-size: 1rem;
+}
+
+.btn-sub {
+	margin: 0 2rem 2rem;
+	padding: 0.5rem 1rem;
+	font-size: 1rem;
+	background-color: rgb(30, 144, 255);
+	color: white;
+	border-radius: 3px;
+	border: none;
+	box-shadow: 1px 1px 5px rgb(59, 59, 59);
+}
+
+.btn-sub-div {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.btn-sub:hover {
+	background-color: rgb(112, 184, 255);
+}
+
+.btn-sub:active {
+	background-color: rgb(0, 128, 255);
+}
+
+.terms-validation-message {
+	padding-left: 6.1rem;
+}
