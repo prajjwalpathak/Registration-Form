@@ -11,7 +11,7 @@ const authenticate = (req, res, next) => {
 			res.cookie("active", serializedEmail);
 			next();
 		} else {
-			return res.json({
+			return res.send({
 				message: "Invalid email or password",
 			});
 		}
