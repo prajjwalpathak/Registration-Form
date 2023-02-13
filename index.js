@@ -1,7 +1,5 @@
 const express = require("express");
 const path = require("path");
-const session = require('express-session');
-const flash = require('connect-flash');
 const cookieParser = require("cookie-parser");
 const validate = require("./middlewares/validate");
 const authenticate = require("./middlewares/authenticate");
@@ -17,12 +15,6 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 app.use(express.json());
 app.use(cookieParser());
-app.use(session({
-    secret:'secret',
-    saveUninitialized: true,
-    resave: true
-}));
-app.use(flash());
 
 app.get("/", (req, res) => {
 	res.send("index.html");
