@@ -9,7 +9,7 @@ const validate = (req, res, next) => {
 	const termsCheck = user.termsCheck;
 
 	// Validate Username
-	const checkName = /^[A-Za-z0-9_]+$/;
+	const checkName = /^[A-Za-z\s]+$/;
 	if (username == "") {
 		return res.json({ message: "Please write your name" });
 	} else if (!username.match(checkName)) {

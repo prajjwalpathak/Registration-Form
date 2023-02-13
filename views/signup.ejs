@@ -16,7 +16,8 @@
             <div class="form-control">
                 <div class="label-input-class">
                     <label>Username</label>
-                    <input name="username" class="name-input input" id="username" type="text">
+                    <input name="username" class="name-input input" id="username" type="text"
+                        onfocus="validateName(event)" onkeyup="validateName(event)">
                 </div>
                 <div class="span-class">
                     <span class="validation-message" id="username-message"></span>
@@ -25,7 +26,8 @@
             <div class="form-control">
                 <div class="label-input-class">
                     <label>Email</label>
-                    <input name="email" class="email-input input" id="email" type="text">
+                    <input name="email" class="email-input input" id="email" type="text" onfocus="validateEmail(event)"
+                        onkeyup="validateEmail(event)">
                 </div>
                 <div class="span-class">
                     <span class="validation-message" id="email-message"></span>
@@ -34,7 +36,8 @@
             <div class="form-control">
                 <div class="label-input-class">
                     <label>Password</label>
-                    <input name="password" class="password-input input" id="password" type="password">
+                    <input name="password" class="password-input input" id="password" type="password"
+                        onfocus="validatePassword(event)" onkeyup="validatePassword(event)">
                 </div>
                 <div class="span-class">
                     <span class="validation-message" id="password-message"></span>
@@ -43,7 +46,8 @@
             <div class="form-control">
                 <div class="label-input-class">
                     <label>Phone</label>
-                    <input name="phone" class="phone-input input" id="phone" type="text" inputmode="numeric">
+                    <input name="phone" class="phone-input input" id="phone" type="text" inputmode="numeric"
+                        onfocus="validatePhone(event)" onkeyup="validatePhone(event)">
                 </div>
                 <div class="span-class">
                     <span class="validation-message" id="phone-message"></span>
@@ -52,7 +56,8 @@
             <div class="form-control">
                 <div class="label-input-class">
                     <label>Technology</label>
-                    <select name="technology" class="input technology-select" id="technology">
+                    <select name="technology" class="input technology-select" id="technology"
+                        onclick="validateTechnology(event)" onfocus="validateTechnology(event)">
                         <option value="none" selected disabled hidden>Select</option>
                         <option value="NodeJS">NodeJS</option>
                         <option value="ReactJS">ReactJS</option>
@@ -70,7 +75,8 @@
                 <div class="label-input-class">
                     <label>Skills</label>
                     <div class="skills-div">
-                        <select name="skills" class="skills-class" id="skills" multiple="multiple">
+                        <select name="skills" class="skills-class" id="skills" multiple="multiple"
+                            onclick="validateSkills(event)" onfocus="validateSkills(event)">
                             <option value="none" selected disabled hidden>Select</option>
                             <option value="NodeJS">NodeJS</option>
                             <option value="ReactJS">ReactJS</option>
@@ -87,11 +93,13 @@
             </div>
             <div class="form-control terms-div">
                 <div class="terms-class">
-                    <input class="termsCheck-input" type="checkbox" id="termsCheck" name="termsCheck">
+                    <input class="termsCheck-input" type="checkbox" id="termsCheck" name="termsCheck"
+                        onclick="validateTermsCheck(event)">
                     <label class="terms-label-class">I agree to all the Terms and Conditions.</label>
                 </div>
                 <div class="span-class">
-                    <span class="validation-message terms-validation-message" id="termsCheck-message"></span>
+                    <span class="terms-validation-message" id="termsCheck-message">Please accept the Terms &
+                        Conditions</span>
                 </div>
             </div>
             <div class="btn-sub-div">
@@ -99,6 +107,7 @@
             </div>
         </form>
     </div>
+    <script src="/script/validation.js"></script>
 </body>
 
 </html>

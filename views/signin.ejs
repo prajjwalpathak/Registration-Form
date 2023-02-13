@@ -16,7 +16,8 @@
             <div class="form-control">
                 <div class="label-input-class">
                     <label>Email</label>
-                    <input class="email-input input" id="email" type="text" name="email">
+                    <input class="email-input input" id="email" type="text" name="email" onfocus="validateEmail(event)"
+                        onkeyup="validateEmail(event)">
                 </div>
                 <div class="span-class">
                     <span class="validation-message" id="email-message"></span>
@@ -25,7 +26,8 @@
             <div class="form-control">
                 <div class="label-input-class">
                     <label>Password</label>
-                    <input class="password-input input" id="password" type="password" name="password">
+                    <input class="password-input input" id="password" type="password" name="password"
+                        onfocus="validatePassword(event)" onkeyup="validatePassword(event)">
                 </div>
                 <div class="span-class">
                     <span class="validation-message" id="password-message"></span>
@@ -36,6 +38,7 @@
             </div>
         </form>
     </div>
+    <script src="/script/validation.js"></script>
 </body>
 
 </html>

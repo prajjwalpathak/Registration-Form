@@ -83,7 +83,15 @@ label {
 
 .validation-message {
 	height: 1rem;
-	padding-left: 10rem;
+	padding-left: 12.5rem;
+	padding-top: 1px;
+	color: rgb(200, 0, 0);
+	font-size: 10px;
+}
+
+.terms-validation-message {
+	height: 1rem;
+	padding-left: 6.1rem;
 	padding-top: 1px;
 	color: rgb(200, 0, 0);
 	font-size: 10px;
