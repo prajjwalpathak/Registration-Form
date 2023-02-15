@@ -208,18 +208,87 @@ option {
 	border-radius: 3px;
 }
 
-.all-employee-btn:not(:focus) {
+.btn:not(:focus) {
 	background-color: rgb(160, 59, 255);
 }
 
-.all-employee-btn:hover {
+.btn:hover {
 	background-color: rgb(169, 78, 255);
 }
 
-.all-employee-btn:focus {
+.btn:focus {
 	background-color: rgb(132, 0, 255);
 }
 
 .search-input {
+	font-size: 1rem;
+	outline: none;
+	padding: 1rem;
 	margin: 1rem 0rem 2rem;
+	width: 16rem;
+	height: 2rem;
+	border: 2px solid rgb(192, 119, 255);
+	border-radius: 3px;
+	background-color: rgba(255, 255, 255, 0.3);
+}
+
+.search-btn {
+	margin: 1rem;
+	width: 3rem;
+	height: 2rem;
+	background-color: rgb(160, 59, 255);
+	color: white;
+	font-size: 1rem;
+	border: none;
+	border-radius: 3px;
+}
+
+tr {
+	width: inherit;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+td, th {
+	margin: 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: start;
+}
+
+thead {
+	background-color: #9fa7ff;
+}
+
+tbody {
+	background-color: #d1d4ff;
+}
+
+.empid-data {
+	width: 8rem;
+}
+
+.name-data {
+	width: 8rem;
+}
+
+.gender-data {
+	width: 6rem;
+}
+
+.age-data {
+	width: 6rem;
+}
+
+.address-data {
+	width: 20rem;
+}
+
+.designation-data {
+	width: 8rem;
+}
+
+.department-data {
+	width: 10rem;
 }

@@ -19,13 +19,13 @@ const getEmployees = (filteredEmployees) => {
     for (let employee of filteredEmployees) {
         out += `
             <tr>
-            <td>${employee.empid}</td>
-            <td>${employee.personal.name}</td>
-            <td>${employee.personal.gender}</td>
-            <td>${employee.personal.age}</td>
-            <td>${employee.personal.address.streetaddress}, ${employee.personal.address.city}, ${employee.personal.address.state}, ${employee.personal.address.postalcode}</td>
-            <td>${employee.profile.designation}</td>
-            <td>${employee.profile.department}</td>
+            <td class="empid-data">${employee.empid}</td>
+            <td class="name-data">${employee.personal.name}</td>
+            <td class="gender-data">${employee.personal.gender}</td>
+            <td class="age-data">${employee.personal.age}</td>
+            <td class="address-data">${employee.personal.address.streetaddress}, ${employee.personal.address.city}, ${employee.personal.address.state}, ${employee.personal.address.postalcode}</td>
+            <td class="designation-data">${employee.profile.designation}</td>
+            <td class="department-data">${employee.profile.department}</td>
             </tr>
         `;
     }

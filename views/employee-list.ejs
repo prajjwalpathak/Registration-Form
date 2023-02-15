@@ -21,9 +21,10 @@
     </div>
     <div class="content-div">
         <div class="search-bar-div">
-            <button class="all-employee-btn" onclick="getAllEmployees()">All Employees</button>
-            <div class="search-input">
-                <input class="search-input" type="text" id="search" placeholder="Search" /><button onclick="getFilteredEmployees()">
+            <button class="all-employee-btn btn" onclick="getAllEmployees()">All Employees</button>
+            <div class="search-input-div">
+                <input class="search-input" type="text" id="search" placeholder="Search" /><button class="search-btn btn"
+                    onclick="getFilteredEmployees()">
                     Go
                 </button>
             </div>
@@ -31,13 +32,13 @@
         <table class="table-class">
             <thead>
                 <tr class="table-row">
-                    <th>Employee ID</th>
-                    <th>Name</th>
-                    <th>Gender</th>
-                    <th>Age</th>
-                    <th>Address</th>
-                    <th>Designation</th>
-                    <th>Department</th>
+                    <th class="empid-data">Employee ID</th>
+                    <th class="name-data">Name</th>
+                    <th class="gender-data">Gender</th>
+                    <th class="age-data">Age</th>
+                    <th class="address-data">Address</th>
+                    <th class="designation-data">Designation</th>
+                    <th class="department-data">Department</th>
                 </tr>
             </thead>
             <tbody id="table-body"></tbody>
