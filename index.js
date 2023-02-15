@@ -5,6 +5,7 @@ const validate = require("./middlewares/validate");
 const authenticate = require("./middlewares/authenticate");
 const activeUser = require("./middlewares/activeUser");
 const checkPasswordMatching = require("./middlewares/checkPasswordMatching");
+const employeeData = require("./data/Employee_Data.json");
 
 const app = express();
 
@@ -37,6 +38,13 @@ app.get("/home", (req, res) => {
 		termsCheck: activeUserData.termsCheck,
 	});
 });
+
+// API
+app.get("/employee-data", (req, res) => {
+	res.send(employeeData);
+});
+
+
 app.get("/change-password", (req, res) => {
 	res.render("change-password.ejs");
 });
@@ -44,6 +52,10 @@ app.get("/signout", (req, res) => {
 	res.clearCookie("active");
 	res.redirect("/");
 });
+app.get("/employee-list", (req, res) => {
+	res.render("employee-list.ejs");
+});
+
 app.post("/signup", validate, (req, res) => {
 	res.redirect("/home");
 });

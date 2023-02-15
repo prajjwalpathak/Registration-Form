@@ -1,0 +1,75 @@
+[
+  {
+    "empid": "CT001",
+    "personal": {
+      "name": "Smith Jones",
+      "gender": "Male",
+      "age": 28,
+      "address": {
+        "streetaddress": "721th Street",
+        "city": "New York",
+        "state": "NY",
+        "postalcode": "10031"
+      }
+    },
+    "profile": {
+      "designation": "Deputy General",
+      "department": "Finance"
+    }
+  },
+  {
+    "empid": "CT002",
+    "personal": {
+      "name": "Mary Jones",
+      "gender": "Female",
+      "age": 28,
+      "address": {
+        "streetaddress": "722th Street",
+        "city": "New York",
+        "state": "NY",
+        "postalcode": "10032"
+      }
+    },
+    "profile": {
+      "designation": "General",
+      "department": "Finance"
+    }
+  },
+  {
+    "empid": "CT003",
+    "personal": {
+      "name": "Mary Parker",
+      "gender": "Female",
+      "age": 25,
+      "address": {
+        "streetaddress": "5th Street",
+        "city": "Manhattan",
+        "state": "NY",
+        "postalcode": "10001"
+      }
+    },
+    "profile": {
+      "designation": "Head",
+      "department": "Advertising"
+    }
+  }
+  ,
+  {
+    "empid": "CT004",
+    "personal": {
+      "name": "Tom Cook",
+      "gender": "Male",
+      "age": 25,
+      "address": {
+        "streetaddress": "69th Street",
+        "city": "Hells Kitchen",
+        "state": "NY",
+        "postalcode": "10101"
+      }
+    },
+    "profile": {
+      "designation": "Manager",
+      "department": "App Development"
+    }
+  }
+]

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <title>Employee List</title>
+</head>
+
+<body>
+    <div class="nav-bar">
+        <h1>Employees Data</h1>
+        <div>
+            <a href="/home">Home</a>
+            <a href="/change-password">Change Password</a>
+            <a href="/signout">Logout</a>
+        </div>
+    </div>
+    <div class="content-div">
+        <div class="search-bar-div">
+            <button class="all-employee-btn" onclick="getAllEmployees()">All Employees</button>
+            <div class="search-input">
+                <input class="search-input" type="text" id="search" placeholder="Search" /><button onclick="getFilteredEmployees()">
+                    Go
+                </button>
+            </div>
+        </div>
+        <table class="table-class">
+            <thead>
+                <tr class="table-row">
+                    <th>Employee ID</th>
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>Age</th>
+                    <th>Address</th>
+                    <th>Designation</th>
+                    <th>Department</th>
+                </tr>
+            </thead>
+            <tbody id="table-body"></tbody>
+        </table>
+    </div>
+    <script src="/script/getData.js"></script>
+</body>
+
+</html>

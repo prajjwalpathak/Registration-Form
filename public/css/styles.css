@@ -180,3 +180,46 @@ option {
 	padding: 0 0.8rem;
 	font-size: 1rem;
 }
+
+.content-div {
+	height: 80vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.search-bar-div {
+	position: relative;
+	top: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-top: 3rem;
+}
+
+.all-employee-btn {
+	width: 10rem;
+	height: 3rem;
+	background-color: rgb(160, 59, 255);
+	color: white;
+	font-size: 1rem;
+	border: none;
+	border-radius: 3px;
+}
+
+.all-employee-btn:not(:focus) {
+	background-color: rgb(160, 59, 255);
+}
+
+.all-employee-btn:hover {
+	background-color: rgb(169, 78, 255);
+}
+
+.all-employee-btn:focus {
+	background-color: rgb(132, 0, 255);
+}
+
+.search-input {
+	margin: 1rem 0rem 2rem;
+}
