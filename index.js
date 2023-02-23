@@ -84,6 +84,7 @@ app.post("/change-password", checkPasswordMatching, (req, res) => {
 
 app.post("/uploads", upload.array("files"), (req, res) => {
     let finalData = [];
+	let workbookData = [];
     try {
         req.files.map((file) => {
             const xlsxFilePath = path.join("uploads/" + file.originalname);
@@ -96,12 +97,15 @@ app.post("/uploads", upload.array("files"), (req, res) => {
                 );
             }
             let sheetCount = 1;
+			workbookData = [];
             allData.forEach((data) => {
                 const sheetNumber = `Sheet_${sheetCount}`;
-                finalData.push({ [sheetNumber]: data });
+                workbookData.push({ [sheetNumber]: data });
                 sheetCount = sheetCount + 1;
             });
+			finalData.push(workbookData);
         });
+		// console.log(finalData[0][0].Sheet_1[0]);
         res.send(finalData);
     } catch (error) {
         console.log(error);
