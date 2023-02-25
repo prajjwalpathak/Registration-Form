@@ -1,5 +1,6 @@
 const path = require("path");
 const xlsx = require("xlsx");
+const fs = require("fs");
 
 const uploadFiles = (req, res) => {
     let finalData = [];
@@ -27,7 +28,15 @@ const uploadFiles = (req, res) => {
                     workbookData,
             });
         });
-        res.send(finalData);
+        const JSONData = JSON.stringify(finalData);
+        fs.writeFile("./uploads/Uploaded_Data.json", JSONData, "utf8", (err) => {
+            if (err) {
+                console.log(`Error writing file: ${err}`);
+            } else {
+                console.log(`File is written successfully!`);
+            }
+        });
+        res.redirect("/create-charts");
     } catch (error) {
         console.log(error);
     }

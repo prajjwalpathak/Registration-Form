@@ -9,6 +9,7 @@ const checkPasswordMatching = require("./middlewares/checkPasswordMatching");
 const renderHome = require("./controllers/renderHome");
 const uploadFiles = require("./controllers/uploadFiles");
 const employeeData = require("./data/Employee_Data.json");
+const chartData = require("./uploads/Uploaded_Data.json");
 
 const app = express();
 
@@ -36,6 +37,9 @@ const upload = multer({ storage: storage });
 app.get("/employee-data", (req, res) => {
     res.send(employeeData);
 });
+app.get("/chart-data", (req, res) => {
+    res.send(chartData);
+});
 
 app.get("/", (req, res) => {
     res.send("index.html");
@@ -61,8 +65,8 @@ app.get("/employee-list", (req, res) => {
 app.get("/uploads", (req, res) => {
     res.render("uploads.ejs");
 });
-app.get("/draw-charts", (req, res) => {
-    res.render("draw-charts.ejs");
+app.get("/create-charts", (req, res) => {
+    res.render("create-chart.ejs");
 });
 
 app.post("/signup", validate, (req, res) => {

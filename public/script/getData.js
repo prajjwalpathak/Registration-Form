@@ -1,8 +1,6 @@
-let fetchData = fetch("http://localhost:3000/employee-data");
-
 let employees = [];
 
-fetchData
+fetch("http://localhost:3000/employee-data")
     .then((res) => {
         return res.json();
     })
@@ -39,8 +37,9 @@ const getAllEmployees = () => {
 const getFilteredEmployees = () => {
     const search = document.getElementById("search").value;
     let filteredEmployees = employees.filter((employee) => {
-        return JSON.stringify(employee).toLowerCase()
-        .includes(search.toLowerCase());
+        return JSON.stringify(employee)
+            .toLowerCase()
+            .includes(search.toLowerCase());
     });
     getEmployees(filteredEmployees);
 };
