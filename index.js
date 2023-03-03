@@ -42,6 +42,7 @@ fs.readdir("./JSON", (error, files) => {
         filenames = files;
     }
 });
+let filename = "";
 
 // API
 app.get("/employee-data", (req, res) => {
@@ -84,6 +85,13 @@ app.get("/create-charts", (req, res) => {
 app.get("/downloads", (req, res) => {
     res.render("downloads.ejs", { files: filenames });
 });
+app.get("/download", (req, res) => {
+    res.download("./downloads/" + filename + ".json", (error) => {
+        if (error) {
+            console.log(err);
+        }
+    });
+});
 
 app.post("/signup", validate, (req, res) => {
     res.redirect("/home");
@@ -96,7 +104,10 @@ app.post("/change-password", checkPasswordMatching, (req, res) => {
 });
 app.post("/uploads", upload.array("files"), uploadFiles);
 
-app.post("/downloads", downloadFiles);
+app.post("/downloads", downloadFiles, (req, res) => {
+    filename = req.body.selectedFile;
+    res.redirect("/download");
+});
 
 // Serve static files
 app.use(express.static(path.join(__dirname + "/public")));
