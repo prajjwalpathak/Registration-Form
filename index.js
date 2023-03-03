@@ -2,20 +2,21 @@ const express = require("express");
 const path = require("path");
 const cookieParser = require("cookie-parser");
 const multer = require("multer");
+const fs = require("fs");
 const validate = require("./middlewares/validate");
 const authenticate = require("./middlewares/authenticate");
 const activeUser = require("./middlewares/activeUser");
 const checkPasswordMatching = require("./middlewares/checkPasswordMatching");
 const renderHome = require("./controllers/renderHome");
 const uploadFiles = require("./controllers/uploadFiles");
+const downloadFiles = require("./controllers/downloadFiles");
 const employeeData = require("./data/Employee_Data.json");
-const chartData = require("./uploads/Uploaded_Data.json");
+const uploadedData = require("./uploads/Uploaded_Data.json");
 
 const app = express();
 
 // middlewares
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname + "/public")));
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 app.use(express.json());
@@ -33,16 +34,28 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage: storage });
 
+let filenames = [];
+fs.readdir("./JSON", (error, files) => {
+    if (error) {
+        console.log(error);
+    } else {
+        filenames = files;
+    }
+});
+
 // API
 app.get("/employee-data", (req, res) => {
     res.send(employeeData);
 });
-app.get("/chart-data", (req, res) => {
-    res.send(chartData);
+// app.get("/chart-data", (req, res) => {
+//     res.send(chartData);
+// });
+app.get("/uploaded-data", (req, res) => {
+    res.send(uploadedData);
 });
 
-app.get("/", (req, res) => {
-    res.send("index.html");
+app.get("/", activeUser, (req, res) => {
+    res.render("index.ejs");
 });
 app.get("/signup", activeUser, (req, res) => {
     res.render("signup.ejs");
@@ -68,6 +81,9 @@ app.get("/uploads", (req, res) => {
 app.get("/create-charts", (req, res) => {
     res.render("create-chart.ejs");
 });
+app.get("/downloads", (req, res) => {
+    res.render("downloads.ejs", { files: filenames });
+});
 
 app.post("/signup", validate, (req, res) => {
     res.redirect("/home");
@@ -79,6 +95,23 @@ app.post("/change-password", checkPasswordMatching, (req, res) => {
     res.redirect("/home");
 });
 app.post("/uploads", upload.array("files"), uploadFiles);
+
+app.post("/downloads", downloadFiles);
+
+// Serve static files
+app.use(express.static(path.join(__dirname + "/public")));
+
+// Handle 404
+app.use(function (req, res) {
+    res.status(400);
+    res.render("404.ejs", { title: "404: File Not Found" });
+});
+
+// Handle 500
+app.use(function (error, req, res, next) {
+    res.status(500);
+    res.render("500.ejs", { title: "500: Internal Server Error" });
+});
 
 app.listen(3000, () => {
     console.log("Server running on http://localhost:3000");

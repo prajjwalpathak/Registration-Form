@@ -2,6 +2,22 @@ const path = require("path");
 const xlsx = require("xlsx");
 const fs = require("fs");
 
+const createJSON = (location, filename, data) => {
+    const JSONData = JSON.stringify(data);
+    fs.writeFile(
+        "./" + location + "/" + filename + ".json",
+        JSONData,
+        "utf8",
+        (err) => {
+            if (err) {
+                console.log(`Error writing file: ${err}`);
+            } else {
+                console.log(`File is written successfully!`);
+            }
+        }
+    );
+};
+
 const uploadFiles = (req, res) => {
     let finalData = [];
     let workbookData = [];
@@ -23,20 +39,17 @@ const uploadFiles = (req, res) => {
                 workbookData.push({ [sheetNumber]: data });
                 sheetCount = sheetCount + 1;
             });
+            const workbookName = file.originalname.substr(
+                0,
+                file.originalname.length - 5
+            );
+            createJSON("JSON", workbookName, workbookData);
             finalData.push({
-                [file.originalname.substr(0, file.originalname.length - 5)]:
-                    workbookData,
+                [workbookName]: workbookData,
             });
         });
-        const JSONData = JSON.stringify(finalData);
-        fs.writeFile("./uploads/Uploaded_Data.json", JSONData, "utf8", (err) => {
-            if (err) {
-                console.log(`Error writing file: ${err}`);
-            } else {
-                console.log(`File is written successfully!`);
-            }
-        });
-        res.redirect("/create-charts");
+        createJSON("Uploads", "Uploaded_Data", finalData);
+        res.json(finalData);
     } catch (error) {
         console.log(error);
     }
