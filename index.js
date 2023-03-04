@@ -1,16 +1,16 @@
 const express = require("express");
-const path = require("path");
-const cookieParser = require("cookie-parser");
-const multer = require("multer");
 const fs = require("fs");
+const path = require("path");
+const multer = require("multer");
+const cookieParser = require("cookie-parser");
 const validate = require("./middlewares/validate");
-const authenticate = require("./middlewares/authenticate");
 const activeUser = require("./middlewares/activeUser");
-const checkPasswordMatching = require("./middlewares/checkPasswordMatching");
 const renderHome = require("./controllers/renderHome");
 const uploadFiles = require("./controllers/uploadFiles");
 const employeeData = require("./data/Employee_Data.json");
+const authenticate = require("./middlewares/authenticate");
 const uploadedData = require("./uploads/Uploaded_Data.json");
+const checkPasswordMatching = require("./middlewares/checkPasswordMatching");
 
 const app = express();
 
@@ -47,9 +47,6 @@ let filename = "";
 app.get("/employee-data", (req, res) => {
     res.send(employeeData);
 });
-// app.get("/chart-data", (req, res) => {
-//     res.send(chartData);
-// });
 app.get("/uploaded-data", (req, res) => {
     res.send(uploadedData);
 });
@@ -78,7 +75,7 @@ app.get("/employee-list", (req, res) => {
 app.get("/uploads", (req, res) => {
     res.render("uploads.ejs");
 });
-app.get("/create-charts", (req, res) => {
+app.get("/create-chart", (req, res) => {
     res.render("create-chart.ejs");
 });
 app.get("/downloads", (req, res) => {

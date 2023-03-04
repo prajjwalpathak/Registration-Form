@@ -7,26 +7,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Create Chart</title>
+    <title>Chart</title>
 </head>
 
 <body>
     <div class="nav-bar">
-        <h1>Create Chart</h1>
+        <h1>Chart</h1>
         <div class="links-div">
             <a href="/home">Home</a>
             <a href="/employee-list">Employee List</a>
+            <a href="/create-chart">Chart</a>
             <a href="/uploads">Upload Files</a>
             <a href="/downloads">Download Files</a>
             <a href="/change-password">Change Password</a>
             <a href="/signout">Logout</a>
         </div>
     </div>
-    <div class="chart-div">
-        <button class="btn-sub" onclick="createChart()">Create Chart</button>
-        <div class="canvas-div" style="width: 50rem;">
-            <canvas id="Canvas" width="400" aria-label="Canvas-Label" role="img"></canvas>
-        </div>
+    <div class="canvas-div" style="width: 50rem;">
+        <canvas id="Canvas" width="400" aria-label="Canvas-Label" role="img"></canvas>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

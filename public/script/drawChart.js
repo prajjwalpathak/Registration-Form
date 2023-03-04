@@ -1,36 +1,20 @@
-let chartData = [];
-
-fetch("http://localhost:3000/chart-data")
-    .then((res) => {
-        return res.json();
-    })
-    .then((data) => {
-        chartData = data;
-    })
-    .catch((error) => {
-        console.log(error);
-    });
-
-const createChart = () => {
-    console.log(chartData);
-};
-
 const ctx = document.getElementById("Canvas");
 
 const mixedChart = new Chart(ctx, {
+    type: 'bar',
     data: {
         datasets: [
             {
                 type: "bar",
-                label: "Bar Dataset",
-                data: [10, 20, 30, 40],
+                label: "Cold Coffee",
+                data: [64, 81, 71, 65, 87, 6, 100, 34, 61, 44],
             },
             {
                 type: "line",
-                label: "Line Dataset",
-                data: [10, 20, 30, 40],
+                label: "Ice Cream",
+                data: [83, 9, 95, 9, 24, 11, 49, 61, 73, 44],
             },
         ],
-        labels: ["January", "February", "March", "April"],
+        labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October"],
     },
 });
