@@ -1,6 +1,9 @@
 const path = require("path");
 const xlsx = require("xlsx");
 const fs = require("fs");
+const { Parser } = require("json2csv");
+
+const CSV = new Parser();
 
 const createJSON = (location, filename, data) => {
     const JSONData = JSON.stringify(data);
@@ -8,11 +11,22 @@ const createJSON = (location, filename, data) => {
         "./" + location + "/" + filename + ".json",
         JSONData,
         "utf8",
-        (err) => {
-            if (err) {
-                console.log(`Error writing file: ${err}`);
-            } else {
-                console.log(`File is written successfully!`);
+        (error) => {
+            if (error) {
+                console.log(`Error writing file: ${error}`);
+            }
+        }
+    );
+};
+
+const createCSV = (location, filename, data) => {
+    fs.writeFile(
+        "./" + location + "/" + filename + ".csv",
+        data,
+        "utf8",
+        (error) => {
+            if (error) {
+                console.log(`Error writing file: ${error}`);
             }
         }
     );
@@ -36,13 +50,33 @@ const uploadFiles = (req, res) => {
             workbookData = [];
             allData.forEach((data) => {
                 const sheetNumber = `Sheet_${sheetCount}`;
-                workbookData.push({ [sheetNumber]: data });
+                const worksheetData = { [sheetNumber]: data };
+                workbookData.push(worksheetData);
+
+                // Create CSV with different sheets in different csv file
+                Object.keys(worksheetData).forEach((key) => {
+                    sheetData = worksheetData[key];
+                    const csvData = CSV.parse(sheetData);
+                    createCSV(
+                        "downloads",
+                        file.originalname.substr(
+                            0,
+                            file.originalname.length - 5
+                        ) +
+                            "_" +
+                            sheetNumber,
+                        csvData
+                    );
+                });
+
                 sheetCount = sheetCount + 1;
             });
             const workbookName = file.originalname.substr(
                 0,
                 file.originalname.length - 5
             );
+
+            // Create JSON Data
             createJSON("JSON", workbookName, workbookData);
             finalData.push({
                 [workbookName]: workbookData,

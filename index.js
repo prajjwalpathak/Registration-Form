@@ -9,7 +9,6 @@ const activeUser = require("./middlewares/activeUser");
 const checkPasswordMatching = require("./middlewares/checkPasswordMatching");
 const renderHome = require("./controllers/renderHome");
 const uploadFiles = require("./controllers/uploadFiles");
-const downloadFiles = require("./controllers/downloadFiles");
 const employeeData = require("./data/Employee_Data.json");
 const uploadedData = require("./uploads/Uploaded_Data.json");
 
@@ -35,7 +34,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 let filenames = [];
-fs.readdir("./JSON", (error, files) => {
+fs.readdir("./downloads", (error, files) => {
     if (error) {
         console.log(error);
     } else {
@@ -104,10 +103,10 @@ app.post("/change-password", checkPasswordMatching, (req, res) => {
 });
 app.post("/uploads", upload.array("files"), uploadFiles);
 
-app.post("/downloads", downloadFiles, (req, res) => {
+app.post("/downloads", (req, res) => {
     filename = req.body.selectedFile.substr(
         0,
-        req.body.selectedFile.length - 5
+        req.body.selectedFile.length - 4
     );
     res.redirect("/download");
 });
