@@ -86,9 +86,9 @@ app.get("/downloads", (req, res) => {
     res.render("downloads.ejs", { files: filenames });
 });
 app.get("/download", (req, res) => {
-    res.download("./downloads/" + filename + ".json", (error) => {
+    res.download("./downloads/" + filename + ".csv", (error) => {
         if (error) {
-            console.log(err);
+            console.log(error);
         }
     });
 });
@@ -105,7 +105,10 @@ app.post("/change-password", checkPasswordMatching, (req, res) => {
 app.post("/uploads", upload.array("files"), uploadFiles);
 
 app.post("/downloads", downloadFiles, (req, res) => {
-    filename = req.body.selectedFile;
+    filename = req.body.selectedFile.substr(
+        0,
+        req.body.selectedFile.length - 5
+    );
     res.redirect("/download");
 });
 

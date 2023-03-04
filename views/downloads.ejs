@@ -21,6 +21,7 @@
     <div>
         <form action="/downloads" method="post">
             <select name="selectedFile">
+                <option value="none" selected disabled hidden>Select</option>
                 <% for(let i=0; i<files.length; i++) { %>
                     <option value='<%= files[i] %>'>
                         <%= files[i] %>
