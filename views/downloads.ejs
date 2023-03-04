@@ -13,7 +13,7 @@
 <body>
     <div class="nav-bar">
         <h1 class="nav-name">Download Files</h1>
-        <div  class="links-div">
+        <div class="links-div">
             <a href="/home">Home</a>
             <a href="/employee-list">Employee List</a>
             <a href="/create-chart">Chart</a>
@@ -23,9 +23,10 @@
             <a href="/signout">Logout</a>
         </div>
     </div>
-    <div>
+    <div class="downloads-div">
+        <label class="downloads-label">Select File</label>
         <form action="/downloads" method="post">
-            <select name="selectedFile">
+            <select name="selectedFile" class="downloads-input">
                 <option value="none" selected disabled hidden>Select</option>
                 <% for(let i=0; i<files.length; i++) { %>
                     <option value='<%= files[i] %>'>
@@ -33,7 +34,7 @@
                     </option>
                     <% } %>
             </select>
-            <button type="submit">Download</button>
+            <button type="submit" class="btn-sub btn">Download</button>
         </form>
     </div>
 

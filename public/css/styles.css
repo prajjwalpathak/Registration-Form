@@ -6,6 +6,7 @@
 	box-sizing: border-box;
 	font-family: "Poppins", sans-serif;
 	list-style: none;
+	color: rgb(225, 225, 225);
 }
 
 :root {
@@ -13,7 +14,7 @@
 }
 
 body {
-	background-color: rgb(218, 177, 255);
+	background-color: rgb(30, 30, 30);
 	width: 100vw;
 	height: 100vh;
 	display: flex;
@@ -27,8 +28,9 @@ body {
 	justify-content: center;
 	padding: 3rem 3rem 1rem 3rem;
 	border-radius: 10px;
-	background-color: rgba(255, 255, 255, 0.5);
+	background-color: rgb(40, 40, 40);
 	box-shadow: 2px 3px 8px rgb(59, 59, 59);
+	margin-top: 5rem;
 }
 
 .form-class {
@@ -37,6 +39,12 @@ body {
 	align-items: stretch;
 	justify-content: center;
 	width: 30rem;
+}
+
+.row-form-class {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .form-control {
@@ -69,11 +77,12 @@ label {
 }
 
 .input {
+	outline: none;
 	font-size: 1rem;
 	width: var(--len);
 	height: 2.1rem;
 	padding-left: 0.6rem;
-	border: 1px solid rgb(116, 116, 116);
+	background-color: rgb(60, 60, 60);
 	border-radius: 4px;
 }
 
@@ -85,7 +94,7 @@ label {
 	height: 1rem;
 	padding-left: 12.5rem;
 	padding-top: 1px;
-	color: rgb(200, 0, 0);
+	color: rgb(255, 69, 69);
 	font-size: 10px;
 }
 
@@ -93,13 +102,14 @@ label {
 	height: 1rem;
 	padding-left: 6.1rem;
 	padding-top: 1px;
-	color: rgb(200, 0, 0);
+	color: rgb(255, 69, 69);
 	font-size: 10px;
 }
 
 .skills-class {
 	width: 17.6rem;
 	border-radius: 4px;
+	background-color: rgb(60, 60, 60);
 }
 
 .terms-class {
@@ -115,33 +125,14 @@ label {
 	font-size: 1rem;
 }
 
-.btn-sub {
-	margin: 0 2rem 2rem;
-	padding: 0.5rem 1rem;
-	font-size: 1rem;
-	background-color: rgb(30, 144, 255);
-	color: white;
-	border-radius: 3px;
-	border: none;
-	box-shadow: 1px 1px 5px rgb(59, 59, 59);
-}
-
 .btn-sub-div {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 
-.btn-sub:hover {
-	background-color: rgb(112, 184, 255);
-}
-
-.btn-sub:active {
-	background-color: rgb(0, 128, 255);
-}
-
 .nav-bar {
-	background-color: #bec8ff;
+	background-color: #474747;
 	position: absolute;
 	top: 0;
 	padding: 1rem;
@@ -151,21 +142,41 @@ label {
 	width: 100vw;
 }
 
+.downloads-div {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 3rem;
+	border-radius: 10px;
+	background-color: rgb(40, 40, 40);
+	box-shadow: 2px 3px 8px rgb(59, 59, 59);
+}
+
+.downloads-label {
+	width: 8rem;
+}
+
+.downloads-input {
+	outline: none;
+	font-size: 1rem;
+	width: var(--len);
+	height: 2.1rem;
+	padding-left: 0.6rem;
+	background-color: rgb(60, 60, 60);
+	border-radius: 4px;
+	margin-right: 1rem;
+}
+
 a:link,
 a:visited {
 	margin: 0 1rem;
-	background-color: #f7bbff;
-	color: rgb(0, 0, 0);
-	padding: 14px 25px;
-	text-align: center;
 	text-decoration: none;
 	display: inline-block;
-	border-radius: 4px;
 }
 
 a:hover,
 a:active {
-	background-color: #f49eff;
+	color: rgb(0, 238, 255);
 }
 
 .nav-bar-ul {
@@ -213,7 +224,17 @@ option {
 .all-employee-btn {
 	width: 10rem;
 	height: 3rem;
-	background-color: rgb(160, 59, 255);
+	background-color: rgb(50, 50, 50);
+	color: white;
+	font-size: 1rem;
+	border: none;
+	border-radius: 3px;
+}
+
+.btn-sub {
+	width: 6rem;
+	height: 3rem;
+	background-color: rgb(50, 50, 50);
 	color: white;
 	font-size: 1rem;
 	border: none;
@@ -221,15 +242,15 @@ option {
 }
 
 .btn:not(:focus) {
-	background-color: rgb(160, 59, 255);
+	background-color: rgb(50, 50, 50);
 }
 
 .btn:hover {
-	background-color: rgb(169, 78, 255);
+	background-color: rgb(62, 62, 62);
 }
 
 .btn:focus {
-	background-color: rgb(132, 0, 255);
+	background-color: rgb(0, 0, 0);
 }
 
 .search-input {
@@ -239,16 +260,15 @@ option {
 	margin: 1rem 0rem 2rem;
 	width: 16rem;
 	height: 2rem;
-	border: 2px solid rgb(192, 119, 255);
+	border: none;
 	border-radius: 3px;
-	background-color: rgba(255, 255, 255, 0.3);
+	background-color: rgb(60, 60, 60);
 }
 
 .search-btn {
 	margin: 1rem;
 	width: 3rem;
 	height: 2rem;
-	background-color: rgb(160, 59, 255);
 	color: white;
 	font-size: 1rem;
 	border: none;
@@ -270,11 +290,13 @@ td, th {
 }
 
 thead {
-	background-color: #9fa7ff;
+	background-color: rgb(60, 60, 60);
+	box-shadow: 2px 2px 5px rgb(60, 60, 60);
 }
 
 tbody {
-	background-color: #d1d4ff;
+	background-color: rgb(40, 40, 40);
+	box-shadow: 2px 2px 5px rgb(60, 60, 60);
 }
 
 .empid-data {
@@ -306,18 +328,18 @@ tbody {
 }
 
 .files-input {
-	background-color: #f8c2ff;
 	padding: 1rem;
 }
 
 #Canvas {
-	background-color: white;
+	background-color: rgb(220, 220, 220);
 }
 
 .user-details-div {
+	background-color: rgb(40, 40, 40);
+	box-shadow: 2px 2px 5px rgb(60, 60, 60);
 	padding: 1rem;
 	border-radius: 5px;
-	background-color: #f8d6fd;
 	height: 20rem;
 	display: flex;
 	flex-direction: column;
