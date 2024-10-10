@@ -19,9 +19,9 @@
   "homepage": "https://github.com/PrajjwalPathak/Registration-Form#readme",
   "dependencies": {
     "chart": "^0.1.2",
-    "cookie-parser": "^1.4.6",
+    "cookie-parser": "^1.4.7",
     "ejs": "^3.1.10",
-    "express": "^4.21.0",
+    "express": "^4.21.1",
     "json2csv": "^6.0.0-alpha.2",
     "multer": "^1.4.5-lts.1",
     "xlsx": "^0.18.5"
